@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+.expo/
+__tests__
+android/
+ios/
+yarn.lock
+metro.config.js
