@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 // import { AppLoading } from 'expo'
 import AppLoading from 'expo-app-loading';
-import './shim'
 import React, { useState, useEffect } from 'react';
 import * as eva from '@eva-design/eva';
 import * as Font from 'expo-font'
