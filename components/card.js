@@ -1,42 +1,29 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Button, Card, Layout, Text, Icon } from '@ui-kitten/components';
+import { Button, Card, Text, Icon } from '@ui-kitten/components';
 
 const NotificationIcon = (props) => (
   <Icon name='bell' {...props} />
 )
 
-const Header = (props) => (
-  <View {...props}>
-    <Text category='h6'>Maldives</Text>
-    <Text category='s1'>By Wikipedia</Text>
-  </View>
-);
-
-const Footer = (props) => (
-  <View {...props} style={[props.style, styles.footerContainer]}>
-    <Button
-      style={styles.footerControl}
+export const CardItem = ({name, num}) => (
+  <React.Fragment>
+    <Card style={styles.card}>
+      <View style={styles.cardItem}>
+        <Text category='h6'>
+        {name}
+      </Text>
+      <Text category='h5'>
+        $ {num}
+      </Text>
+     
+      <Button
+      style={styles.button}
       size='small'
       status='basic'
       accessoryRight={NotificationIcon}
-      >
-      
-    </Button>
-    {/* <Button
-      style={styles.footerControl}
-      size='small'>
-      ACCEPT
-    </Button> */}
-  </View>
-);
-
-export const CardItem = ({num}) => (
-  <React.Fragment>
-    <Card style={styles.card} header={Header} footer={Footer}>
-      <Text>
-        $ {num}
-      </Text>
+      />
+      </View>
     </Card>
   </React.Fragment>
 );
@@ -47,11 +34,13 @@ const styles = StyleSheet.create({
     margin: 2,
     width: '100%'
   },
-  footerContainer: {
+  cardItem: {
+    width: '100%',
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
-  footerControl: {
-    marginHorizontal: 2,
+  button: {
+    width: '10%',
   },
 });
