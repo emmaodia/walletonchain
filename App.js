@@ -6,7 +6,7 @@ import * as eva from '@eva-design/eva';
 import * as Font from 'expo-font'
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { NavigationContainer } from '@react-navigation/native';
-import { Navigation } from './navigation';
+import { Navigation, NavigationBottom } from './navigation';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 
 const loadFonts = () => {
@@ -36,9 +36,9 @@ export default function App() {
     <>
     <IconRegistry icons={EvaIconsPack} />
     <ApplicationProvider {...eva} theme={eva.dark}>
-    <NavigationContainer>
-    <Navigation />
-    </NavigationContainer>
+      <NavigationContainer>
+        <Navigation />
+      </NavigationContainer>
     </ApplicationProvider>
     </>
   );
